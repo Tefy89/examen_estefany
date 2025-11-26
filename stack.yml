@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   sani:
-    image: ghcr.io/Tefy89/sani:1.0.5
+    image: ghcr.io/tefy89/sani:1.0.5
     deploy:
       replicas: 1
       labels:
