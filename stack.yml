@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+
+  sani:
+    image: ghcr.io/Tefy89/sani:1.0.5
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.sani.rule=Host(`sani.byronrm.com`)"
+        - "traefik.http.routers.sani.entrypoints=http"
+        - "traefik.http.routers.sani-secure.rule=Host(`sani.byronrm.com`)"
+        - "traefik.http.routers.sani-secure.entrypoints=https"
+        - "traefik.http.routers.sani-secure.tls=true"
+        - "traefik.http.routers.sani-secure.tls.certresolver=http"
+        - "traefik.http.services.sani.loadbalancer.server.port=5000"
+        - "traefik.docker.network=traefik-public"
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: true
