@@ -60,7 +60,7 @@ HTML = """
 <body>
 
 <div class="card">
-    <h2>Calculadora Flask CI/CD - Sani</h2>
+    <h2>Estefany</h2>
 
     <form method="POST">
         <label>Número 1:</label>
